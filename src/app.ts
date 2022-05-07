@@ -9,7 +9,7 @@ export class App {
 
     constructor() {
         this.app = express();
-        this.port = 8002;
+        this.port = 8005;
         this.initHealth();
     }
 

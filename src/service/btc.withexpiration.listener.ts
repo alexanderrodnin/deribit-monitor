@@ -1,4 +1,5 @@
 import WebSocket from 'ws'
+import { logger } from "./../logger"
 
 export class BtcWithExpirationListener {
     
@@ -16,7 +17,7 @@ export class BtcWithExpirationListener {
         var ws = new WebSocket('wss://test.deribit.com/ws/api/v2')
         ws.onmessage = function (e) {
             // do something with the notifications...
-            console.log('received from server : ', e.data)
+            logger.info(e.data)
         }
         ws.onopen = function () {
             ws.send(JSON.stringify(msg))
